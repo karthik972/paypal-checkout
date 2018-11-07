@@ -6,9 +6,11 @@ import { ZalgoPromise } from 'zalgo-promise/src';
 import { create  } from 'zoid/src';
 import { type Component } from 'zoid/src/component/component';
 import type { CrossDomainWindowType } from 'cross-domain-utils/src';
+import { info } from 'beaver-logger/client';
 
 import { config } from '../config';
 import { getButtonSessionID, getBrowserLocale, getSessionID } from '../lib';
+import { validateCardStyle } from './validate';
 
 type CardOptions = {
     client : {
@@ -148,6 +150,31 @@ export const Card : Component<CardOptions> = create({
             type:       'object',
             required:   false,
             queryParam: true
+        },
+
+        style: {
+            type:       'object',
+            required:   false,
+            queryParam: true,
+            //alias:      'cardStyle', //what is this alias?
+
+            def() : Object {
+                return {
+                    installments: {
+                        display: false
+                    }
+                };
+            },
+
+            validate(style = {}) {
+                if (style.installments) {
+                    info(`show_installments_${ style.installments.display || 'default' }`);
+                    info(`fixed_installments_${ style.installments.fixedInstallments || 'default' }`);
+                    info(`fixed_installments_term_${ style.installments.fixedInstallmentsTerm || 'default' }`);
+                }
+
+                validateCardStyle(style);
+            }
         }
     }
 });
