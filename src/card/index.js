@@ -154,10 +154,11 @@ export const Card : Component<CardOptions> = create({
                 }));
             }
         },
-        
+
         meta: {
             type:       'object',
             required:   false,
             queryParam: true
         }
+    }
 });
