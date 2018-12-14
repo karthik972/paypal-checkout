@@ -101,8 +101,9 @@ export const Card : Component<CardOptions> = create({
         },
 
         initialFormValues: {
-            type:     'object',
-            required: false
+            type:       'object',
+            required:   false,
+            queryParam: true
         },
 
 
@@ -153,5 +154,9 @@ export const Card : Component<CardOptions> = create({
                 }));
             }
         }
-    }
+        meta: {
+            type:       'object',
+            required:   false,
+            queryParam: true
+        }
 });
