@@ -153,7 +153,8 @@ export const Card : Component<CardOptions> = create({
                     url: getCurrentScript()
                 }));
             }
-        }
+        },
+        
         meta: {
             type:       'object',
             required:   false,
