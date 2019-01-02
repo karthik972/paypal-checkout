@@ -100,7 +100,7 @@ function renderCards({ cards, button, layout, size } :
     });
 }
 
-export function renderFundingIcons({ cards, fundingicons, size, layout } :
+function renderFundingIcons({ cards, fundingicons, size, layout } :
     { cards : Array<string>, fundingicons : boolean, layout : string, size : string }) : ?JsxHTMLNode {
 
     if (!fundingicons) {
@@ -269,7 +269,7 @@ function renderScript() : JsxHTMLNode {
     );
 }
 
-export function renderStyle({ height, cardNumber } : { height? : ?number, cardNumber? : number }) : JsxHTMLNode {
+function renderStyle({ height, cardNumber } : { height? : ?number, cardNumber? : number }) : JsxHTMLNode {
     return (
         <style innerHTML={ componentStyle({ height, cardNumber }) } />
     );

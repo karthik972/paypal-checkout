@@ -25,7 +25,6 @@ export { request, isEligible, isFundingRemembered, allowIframe as forceIframe, a
 export { logExperimentTreatment } from './experiments';
 export { logFundingEligibility } from './funding';
 
-
 export let onPossiblyUnhandledException = ZalgoPromise.onPossiblyUnhandledException;
 
 export let version = __PAYPAL_CHECKOUT__.__MINOR_VERSION__;
