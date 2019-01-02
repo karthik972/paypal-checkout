@@ -155,9 +155,9 @@ export const Card : Component<CardOptions> = create({
             }
         },
 
-        meta: {
-            type:       'object',
-            required:   false,
+        style: {
+            type: 'object',
+            required: false,
             queryParam: true
         }
     }
